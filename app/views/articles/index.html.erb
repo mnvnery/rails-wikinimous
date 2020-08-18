@@ -1,0 +1,19 @@
+<h1>Wikinimous</h1>
+
+<ul>
+  <% @articles.each do |article| %>
+    <li>
+      <h2>
+        <a href="<%= article_path(article.id) %>"><%= article.title %></a><a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="<%= article_path(article.id) %>">
+          🗑
+        </a>
+      </h2>
+      <p><%= article.content %></p>
+    </li>
+  <% end %>
+</ul>
+
+
+
+<%= link_to 'Add a new article', articles_path %>
+
